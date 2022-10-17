@@ -1,0 +1,34 @@
+.loader {
+  position: relative;
+  font-size: 3em;
+  letter-spacing: 0.5em;
+  font-weight: bold;
+  width: min-content;
+}
+
+.loader span {
+  mix-blend-mode: difference;
+}
+
+.loader::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 80px;
+  height: 100%;
+  background-color: white;
+  animation: traverse 1.5s linear infinite;
+}
+
+@keyframes traverse {
+  0% {
+    left: 0;
+  }
+  50% {
+    left: calc(100% - 80px);
+  }
+  100% {
+    left: 0;
+  }
+}
